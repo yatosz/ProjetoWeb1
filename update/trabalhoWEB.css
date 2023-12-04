@@ -1,0 +1,116 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: #fff;
+    /* text-align: center; */
+    padding: 10px;
+    margin: 0px;
+    margin-left: 11%;
+}
+
+h1 {
+    text-align: left;
+    width: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.featured-products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.product {
+    width: 45%;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+
+.banner1 {
+    width: 20%;
+    height: 20px;
+}
+
+.imagens {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+#campoBuscaContainer {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+img {
+    margin-top: 20px;
+    /* Add any additional styles as needed */
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover img {
+    transform: scale(1.1); /* Increase the scale value for a stronger zoom effect */
+}
+
+
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Store</title>
+    <link rel="stylesheet" href="trabalhoWEB.css">
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    header {
+        z-index: 1;
+    }
+
+    img#mundodoseujeito {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+    }
+
+    nav {
+        position: relative;
+        z-index: 1;
+    }
+</style>
+<body>
+
+    <header style="margin-left: 30px;">
+        <h1 style="color: rgb(0, 0, 0);">Nike Store</h1>
+        <img class="imagens" src="img/user.png" alt="" style="margin-right: 10px;">
+        <img class="imagens" src="img/shopping-bag.png" alt="" style="margin-right: 10px;">
+        <a href="FAQ.html"><img class="imagens" src="img/faq.png" alt="Imagem de suporte"
+                style="margin-right: 10px;"></a>
+    </header>
+    
+    <nav style="margin-top: -30px;">
+        <a href="home.html">Ínicio</a> 
+        <a href="Lançamentos.html">Lançamentos</a> 
+        <div class="dropdown">
+            <a href="#" id="categoriasDropdown">Categorias</a>
+            <div class="dropdown-content" id="categoriasDropdownContent">
+                <!-- As categorias serão adicionadas aqui dinamicamente -->
+            </div>
+        </div>
+    </nav>
+    <img src="img/MundoDoSeuJeito.png" alt="" style="width: 100%; height: 500px;">
+
+    <section>
+        <h2 style="text-align: center;">Novidades</h2>
+
+        <div class="featured-products">
+            <div class="product" style="display: flex; align-items: flex-start; text-align: center;">
+                <div style="width: 30%;">
+                    <img src="img/camisa1.png" alt="" style="width: 100%; margin-top: 10px;">
+                    <h3 style="text-align: center;">CAMISA BUTTERFLY</h3>
+                    <p style="text-align: center;"><b>R$129.99</b></p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" style="display: flex; align-items: flex-start; margin-left: -60%; text-align: center;">
+                <div style="width: 30%;">
+                    <img src="img/camisa2.png" alt="" style="width: 120%; margin-left: -7%; margin-top: 2px;">
+                    <h3 style=" margin-top: 2px;">CAMISA BUTTERFLY</h3>
+                    <p style="text-align: center;"><b>R$129.99</b></p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Todos os direitos reservados
+    </footer>
+
+    <script src="dropdown.js">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Store</title>
+    <link rel="stylesheet" href="trabalhoWEB.css">
+</head>
+
+<body>
+
+    <header style="margin-left: 30px;">
+        <h1 style="color: rgb(0, 0, 0);">Nike Store</h1>
+        <div id="campoBuscaContainer">
+            <input type="text" id="campoBusca" style="display:none;">
+        </div>
+        <!-- Adiciona um botão com a imagem de busca -->
+        <img class="imagens" src="img/user.png" alt="" style="margin-right: 10px;">
+        <img class="imagens" src="img/shopping-bag.png" alt="" style="margin-right: 10px;">
+        <a href="FAQ.html"><img class="imagens" src="img/faq.png" alt="Imagem de suporte"
+                style="margin-right: 10px;"></a>
+    </header>
+
+    <nav>
+         <a href="home.html">Ínicio</a> 
+        <a href="Lançamentos.html">Lançamentos</a> 
+        <div class="dropdown">
+            <a href="#" id="categoriasDropdown">Categorias</a>
+            <div class="dropdown-content" id="categoriasDropdownContent">
+                <!-- As categorias serão adicionadas aqui dinamicamente -->
+            </div>
+        </div>
+    </nav>
+
+    <img src="img/MundoDoSeuJeito.png" alt="" style="width: 100%; height: 500px;">
+    <section>
+        <h2 style="text-align: center;">Novidades</h2>
+
+        <div class="featured-products">
+            <div class="product" style="display: flex; align-items: flex-start;">
+                <div style="width: 30%;">
+                    <img src="img/camisa1.png" alt="" style="width: 100%; margin-top: 10px;">
+                    <h3 style="text-align: center;">CAMISA BUTTERFLY</h3>
+                    <p><b>R$129.99</b></p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" style="display: flex; align-items: flex-start; margin-left: -1100px;">
+                <div style="width: 30%;">
+                    <img src="img/camisa2.png" alt="Shoe 2" style="width: 110%; margin-top: 10px;">
+                    <h3 style="text-align: center;">CAMISA BUTTERFLY 2</h3>
+                    <p><b>R$129.99</b></p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Todos os direitos reservados
+    </footer>
+
+    <script>
+        // Função para carregar categorias dinamicamente
+        function carregarCategorias() {
+            var categorias = ["Acessórios", "Calças", "Blusas", "Shorts", "Vestidos"];
+            var dropdownContent = document.getElementById("categoriasDropdownContent");
+            dropdownContent.innerHTML = "";
+
+            categorias.forEach(function (categoria) {
+                var link = document.createElement("a");
+                link.href = categoria.toLowerCase() + ".html";
+                link.textContent = categoria;
+                link.addEventListener('click', function () {
+                    // Redirecione para a URL desejada
+                    window.location.href = link.href;
+                });
+                dropdownContent.appendChild(link);
+
+                console.log("Link gerado para", categoria);
+            });
+
+            console.log("Função carregarCategorias chamada.");
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Aguarde o carregamento do DOM
+
+            // Adicione um ouvinte de clique ao link de Categorias
+            document.getElementById('categoriasDropdown').addEventListener('mouseover', function () {
+                // Log para verificar se o clique está sendo detectado
+                console.log("Mouse sobre Categorias");
+
+                // Adicione a classe "hover" para simular o evento de mouseover
+                carregarCategorias();
+            });
+        });
+    </script>
+</body>
+
+</html>

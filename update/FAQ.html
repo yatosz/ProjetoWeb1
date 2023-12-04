@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .faq-section {
+            margin-top: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .answer.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Perguntas frequentes</h1>
+
+    <div class="faq-section">
+        <div class="question" onclick="toggleAnswer('p1')">Como posso fazer um pedido?</div>
+        <div class="answer" id="p1">Você pode fazer um pedido visitando nossa loja online e seguindo o processo de finalização da compra.</div>
+    </div>
+
+    <div class="faq-section">
+        <div class="question" onclick="toggleAnswer('p2')">Que tipos de pagamentos você aceita?</div>
+        <div class="answer" id="p2">Aceitamos cartões de crédito/débito e PayPal como métodos de pagamento.</div>
+    </div>
+
+    <div class="faq-section">
+        <div class="question" onclick="toggleAnswer('p3')">Como posso rastrear meu pedido?</div>
+        <div class="answer" id="p3">Assim que seu pedido for enviado, você receberá um número de rastreamento por e-mail. Você pode usar esse número para rastrear seu pedido em nosso site.</div>
+    </div>
+
+    <!-- FAQ  -->
+
+    <script src="FAQ.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Store - Avaliações</title>
+    <link rel="stylesheet" href="avaliações.css">
+</head>
+
+<body>
+
+    <header style="margin-left: 30px;">
+        <h1 style="color: rgb(0, 0, 0);">Nike Store</h1>
+        <div id="campoBuscaContainer">
+            <input type="text" id="campoBusca" style="display:none;">
+        </div>
+        <img class="imagens" src="img/user.png" alt="" style="margin-right: 10px;">
+        <img class="imagens" src="img/shopping-bag.png" alt="" style="margin-right: 10px;">
+        <a href="FAQ.html"><img class="imagens" src="img/faq.png" alt="Imagem de suporte" style="margin-right: 10px;"></a>
+    </header>
+
+    <nav>
+        <a href="home.html">Ínicio</a>
+        <a href="Lançamentos.html">Lançamentos</a>
+        <div class="dropdown">
+            <a href="#" id="categoriasDropdown">Categorias</a>
+            <div class="dropdown-content" id="categoriasDropdownContent">
+                <!-- As categorias serão adicionadas aqui dinamicamente -->
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <h2 style="text-align: center;">Avaliações e Comentários</h2>
+
+        <div class="review">
+            <h3>Igor</h3>
+            <h4>Camisa Butterfly</h4>
+            <p>Esta camisa é incrível! Adorei o design e a qualidade do tecido. Compraria novamente.</p>
+            <div id="avaliação">
+                Avaliação: ⭐⭐⭐⭐
+            </div>
+        </div>
+
+        <div class="review">
+            <h3>Rodrigo</h3>
+            <h4>Camisa Butterfly 2</h4>
+            <p>Excelente qualidade! A entrega foi rápida, e a camisa é tão confortável. Recomendo.</p>
+            <div id="avaliação">
+                Avaliação: ⭐⭐⭐⭐⭐
+            </div>
+        </div>
+
+        <!-- Adicione mais avaliações conforme necessário -->
+
+    </section>
+
+    <footer>
+        Todos os direitos reservados
+    </footer>
+
+    <script>
+        // Função para carregar categorias dinamicamente
+        function carregarCategorias() {
+            var categorias = ["Acessórios", "Calças", "Blusas", "Shorts", "Vestidos"];
+            var dropdownContent = document.getElementById("categoriasDropdownContent");
+            dropdownContent.innerHTML = "";
+
+            categorias.forEach(function (categoria) {
+                var link = document.createElement("a");
+                link.href = categoria.toLowerCase() + ".html";
+                link.textContent = categoria;
+                link.addEventListener('click', function () {
+                    // Redirecione para a URL desejada
+                    window.location.href = link.href;
+                });
+                dropdownContent.appendChild(link);
+
+                console.log("Link gerado para", categoria);
+            });
+
+            console.log("Função carregarCategorias chamada.");
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Aguarde o carregamento do DOM
+
+            // Adicione um ouvinte de clique ao link de Categorias
+            document.getElementById('categoriasDropdown').addEventListener('mouseover', function () {
+                // Log para verificar se o clique está sendo detectado
+                console.log("Mouse sobre Categorias");
+
+                // Adicione a classe "hover" para simular o evento de mouseover
+                carregarCategorias();
+            });
+        });
+    </script>
+</body>
+
+</html>

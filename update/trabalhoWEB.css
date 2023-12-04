@@ -97,19 +97,12 @@ a {
     background-color: #f1f1f1;
 }
 
-#campoBuscaContainer {
-    display: flex;
-    align-items: center;
-}
-
 button {
+    /* botão para poder mexer, modificar */
     border: none;
     background: none;
 }
 
-.product:hover img {
-    transform: scale(1.1); /* Increase the scale value for a stronger zoom effect */
-}
 
 section {
     position: relative;

@@ -1,0 +1,10 @@
+#starButton {
+    font-size: 16px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.avaliacao button.starButton:hover {
+    cursor: pointer;
+    /* Adicione outros estilos desejados quando o mouse estiver sobre o botão */
+}

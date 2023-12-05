@@ -103,6 +103,9 @@ button {
     background: none;
 }
 
+.product:hover img {
+    transform: scale(1.1); /* Increase the scale value for a stronger zoom effect */
+}
 
 section {
     position: relative;

@@ -26,3 +26,19 @@
 .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
+
+
+/* Ajuste de remoção borda botão, e ajuste da Nav */
+nav {
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+button {
+    border: none;
+    background: none;
+}

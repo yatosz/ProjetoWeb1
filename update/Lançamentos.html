@@ -55,7 +55,7 @@
                 <button class="starButton">Avaliação: ⭐⭐⭐⭐⭐</button>
             </div>
             <p id="preço">R$ 129,99</p>
-            <button id="add-carrinho">Adicionar ao Carrinho</button>
+            <button id="add-carrinho" onclick="addToCart('Camisa Butterfly', 'R$ 129,99')">Adicionar ao Carrinho</button>
         </div>
 
         
@@ -70,8 +70,8 @@
             <div class="avaliacao">
                 <button class="starButton">Avaliação: ⭐⭐⭐⭐⭐</button>
             </div>
-            <p id="preço"><b>R$ 129,99</b></p>
-            <button id="add-carrinho">Adicionar ao Carrinho</button>
+            <p id="preço"><b>R$ 159,99</b></p>
+            <button id="add-carrinho" onclick="addToCart('Camisa Compsupply', 'R$ 159,99')">Adicionar ao Carrinho</button>
         </div>
    
 </div>
@@ -113,5 +113,21 @@
     <script src="carrosel.js"></script>
     <script src="dropdown.js"></script>
     <script src="stars.js"></script>
+
+    <script>
+        function addToCart(productName, productPrice) {
+            // Recupera ou inicializa o carrinho
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Adiciona o produto ao carrinho
+            cart.push({ name: productName, price: productPrice });
+    
+            // Atualiza o carrinho no armazenamento local
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            // Avisa o usuário que o produto foi adicionado ao carrinho
+            alert(productName + ' adicionado ao carrinho!');
+        }
+    </script>
 </body>
 </html>

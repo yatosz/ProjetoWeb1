@@ -35,7 +35,7 @@
 
         <div class="product"style="width: 50%; height: 50%;">
        
-            <img src="img/Vestido1.png" alt="Calça Jeans" id="imagem-produto">
+            <img src="img/Vestido1.png" alt="Vestido Longo Amarracao Lateral" id="imagem-produto">
             <div id="info">
             <p id="categoria">
                 <h4>Vestidos</h4>
@@ -44,8 +44,8 @@
                 <button class="starButton">Avaliação: ⭐⭐⭐⭐⭐</button>
             </div>
             <h4>1° mais vendido</h4>
-            <p id="preço">R$ 239,99</p>
-            <button id="add-carrinho">Adicionar ao Carrinho</button>
+            <p id="preço">R$ 3339,99</p>
+            <button id="add-carrinho" onclick="addToCart('Vestido Longo Amarracao Lateral', 'R$ 3339,99')">Adicionar ao Carrinho</button>
         </div>
     </div>
 
@@ -53,7 +53,7 @@
         <!-- Produto 2 -->
         <div class="product" style="width: 50%; height: 50%;">
        
-            <img src="img/Vestido2.png" alt="KIT 2 Calças Masculina Moletom Conforto Corrida Skinny" id="imagem-produto">
+            <img src="img/Vestido2.png" alt="Vestido MIDI Frente Unica Recorte Lateral" id="imagem-produto">
             <div id="info">
             <p id="categoria">
                 <h4>Vestidos</h4>
@@ -62,8 +62,8 @@
             <div class="avaliacao">
                 <button class="starButton">Avaliação: ⭐⭐⭐⭐⭐</button>
             </div>
-            <p id="preço">R$ 129,99</p>
-            <button id="add-carrinho">Adicionar ao Carrinho</button>
+            <p id="preço">R$ 2129,99</p>
+            <button id="add-carrinho" onclick="addToCart('Vestido MIDI Frente Unica Recorte Lateral', 'R$ 2129,99')">Adicionar ao Carrinho</button>
         </div>
     </div>
 
@@ -73,6 +73,22 @@
 
     <script src="dropdown.js"></script>
     <script src="stars.js"></script>
+
+    <script>
+        function addToCart(productName, productPrice) {
+            // Recupera ou inicializa o carrinho
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Adiciona o produto ao carrinho
+            cart.push({ name: productName, price: productPrice });
+    
+            // Atualiza o carrinho no armazenamento local
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            // Avisa o usuário que o produto foi adicionado ao carrinho
+            alert(productName + ' adicionado ao carrinho!');
+        }
+    </script>
 </body>
 
 </html>

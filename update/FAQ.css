@@ -1,0 +1,33 @@
+/* corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+/* Estilo para os cabeçalhos de h1 */
+h1 {
+    text-align: center;
+}
+
+/* Estilo para a seção de perguntas frequentes faq-section */
+.faq-section {
+    margin-top: 20px;
+}
+
+/* Estilo para as perguntas question nas perguntas frequentes */
+.question {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilo para as respostas answer nas perguntas frequentes */
+.answer {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Estilo para exibir as respostas quando a classe 'show' está presente */
+.answer.show {
+    display: block;
+}

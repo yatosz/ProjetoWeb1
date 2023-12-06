@@ -60,7 +60,7 @@
         
         <!-- Produto 2 -->
         
-        <img src="img/camisa2.png" alt="Camisa Butterfly" id="imagem-produto">
+        <img src="img/camisa2.png" alt="Camisa Compsupply" id="imagem-produto" style="height: 333px;">
             <div id="info">
             <p id="categoria">
                 <h4>Blusas</h4></p>
@@ -69,40 +69,48 @@
             <div class="avaliacao">
                 <button class="starButton">Avaliação: ⭐⭐⭐⭐⭐</button>
             </div>
-            <p id="preço">R$ 129,99</p>
+            <p id="preço"><b>R$ 129,99</b></p>
             <button id="add-carrinho">Adicionar ao Carrinho</button>
         </div>
    
 </div>
 
-        <!-- Adicione mais produtos conforme necessário -->
-        <!-- Produto 3, Produto 4, ... -->
+        <!-- mais produtos conforme necessário -->
+
     </section>
-            </div>
+</div>
 
             <div class="swiper-slide">
-                <div class="featured-products">
-                    <div class="product"style="width: 50%; height: 50%;">
-                        <div style="width: 40%; margin-left: -50%;"> <!-- Ajuste o valor da margem conforme necessário -->
-                            <img src="img/camisa2.png" alt="Shoe 2" style="width: 100%; margin-top: 10px;">
-                            <h3 style="text-align: center;">CAMISA BUTTERFLY 2</h3>
-                            <p><b>R$129.99</b></p>
-                            <button>Add to Cart</button>
-                        </div>
+                <section style="display: flex; overflow-x: auto; text-align: center;">
+               
+                    <div id="pagina-produto" style="width: 100%; height: 100%;">
+                        
+
+                            <img src="img/camisa3.png" alt="Outra Camisa" id="imagem-produto" style="height: 315px;">
+                            <div id="info">
+                                <p id="categoria">
+                                    <h4>Blusas</h4></p>
+                            <h1 id="produto-nome">Outra Camisa</h1>
+                            <div class="avaliacao">
+                                <button class="starButton">Avaliação: ⭐⭐⭐⭐⭐</button>
+                            </div>
+                            <p id="preço"><b>R$ 89,00</b></p>
+                            <button id="add-carrinho">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </div>
+            
             <!-- Adicione mais produtos conforme necessário -->
         </div>
-        <!-- Adicione a barra de navegação dentro do contêiner do Swiper -->
+        <!-- barra de navegação dentro do contêiner do Swiper -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev" style="display: none;"></div>
     </section>
 
-    <!-- Adicione a biblioteca Swiper.js -->
+    <!-- biblioteca Swiper.js -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="carrosel.js"></script>
     <script src="dropdown.js"></script>
+    <script src="stars.js"></script>
 </body>
-
 </html>

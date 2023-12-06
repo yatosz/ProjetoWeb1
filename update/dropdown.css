@@ -1,8 +1,10 @@
+/* Estilo para a dropdown */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
+/* Estilo para o conteúdo da dropdown */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -12,10 +14,12 @@
     z-index: 1;
 }
 
+/* Mostra o conteúdo da dropdown quando o mouse passa sobre a dropdown */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
+/* Estilo para os links dentro da dropdown */
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -23,21 +27,23 @@
     display: block;
 }
 
+/* Estilo para os links dentro da dropdown quando o mouse passa sobre eles */
 .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
 
 
-/* Ajuste de remoção borda botão, e ajuste da Nav */
+/* Estilo para a navegação (nav) */
 nav {
     background-color: #ffffff;
-    color: #fff;
+    color: #000000;
     text-align: center;
     padding: 10px;
     position: relative;
     z-index: 1;
 }
 
+/* Estilo para remover borda do botão */
 button {
     border: none;
     background: none;

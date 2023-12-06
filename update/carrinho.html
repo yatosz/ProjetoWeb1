@@ -29,15 +29,11 @@
         </div>
     </nav>
 
-   
     <section>
         <h2 style="text-align: center;">Carrinho</h2>
 
         <div class="cart-products" id="cartProducts">
             <!-- Produtos do carrinho serão adicionados aqui dinamicamente -->
-        </div>
-
-            <!-- Adicione mais produtos aqui conforme necessário -->
         </div>
     </section>
 
@@ -46,41 +42,60 @@
     </footer>
 
     <script>
+        // Recupera o carrinho do armazenamento local
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Exibe os produtos do carrinho
+        var cartProducts = document.getElementById("cartProducts");
+
+        function updateCartDisplay() {
+            // Limpa o conteúdo atual do carrinho
+            cartProducts.innerHTML = "";
+
+            // Adiciona os produtos atualizados
+            cart.forEach(function (product, index) {
+                var cartProduct = document.createElement("div");
+                cartProduct.className = "cart-product";
+                cartProduct.innerHTML = `
+                    <img src="img/${product.name.toLowerCase().replace(' ', '-')}.png" alt="" style="width: 100%;">
+                    <h3 style="text-align: center;">${product.name}</h3>
+                    <p><b>${product.price}</b></p>
+                    <label for="productQuantity${index}">Quantidade:</label>
+                    <select id="productQuantity${index}" name="productQuantity${index}">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <button onclick="removeFromCart(${index})">Remover do Carrinho</button>
+                `;
+                cartProducts.appendChild(cartProduct);
+            });
+        }
+
+        // Exibe os produtos iniciais do carrinho
+        updateCartDisplay();
+
         function addToCart(productName, productPrice) {
-            var cartProducts = document.getElementById("cartProducts");
-
             var productId = "product_" + Date.now(); // Cria um ID único para o produto
-            var cartProduct = document.createElement("div");
-            cartProduct.className = "cart-product";
-            cartProduct.id = productId;
+            cart.push({ id: productId, name: productName, price: productPrice });
 
-            cartProduct.innerHTML = `
-                <img src="img/${productName.toLowerCase().replace(' ', '-')}.png" alt="" style="width: 100%;">
-                <h3 style="text-align: center;">${productName}</h3>
-                <p><b>${productPrice}</b></p>
-                <label for="${productId}Quantity">Quantidade:</label>
-                <select id="${productId}Quantity" name="${productId}Quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                <button onclick="removeFromCart('${productId}')">Remover do Carrinho</button>
-            `;
+            // Atualiza o carrinho no localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
 
-            cartProducts.appendChild(cartProduct);
+            // Atualiza a exibição do carrinho
+            updateCartDisplay();
         }
 
-        function removeFromCart(productId) {
-            var cartProduct = document.getElementById(productId);
-            if (cartProduct) {
-                cartProduct.remove();
-            }
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+
+            // Atualiza o carrinho no localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Atualiza a exibição do carrinho
+            updateCartDisplay();
         }
 
-        // Exemplo de adição de produto ao carrinho
-        document.addEventListener('DOMContentLoaded', function () {
-            addToCart("CAMISA BUTTERFLY", "R$129.99");
-        });
     </script>
     <script src="dropdown.js"></script>
 </body>

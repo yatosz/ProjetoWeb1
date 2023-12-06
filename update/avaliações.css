@@ -95,6 +95,16 @@ section {
     margin-top: 10px;
 }
 
+.starButton {
+    font-size: 16px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.avaliacao button.starButton:hover {
+    cursor: pointer;
+}
+
 footer {
     text-align: center;
     padding: 10px;

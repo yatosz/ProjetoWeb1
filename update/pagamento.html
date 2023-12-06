@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjetoWeb</title>
+    <link rel="stylesheet" href="pagamento.css">
+</head>
+
+<body>
+    <div>
+        <p>Dados do cartão</p>
+        <input type="text" id="num_cartao" name="num_cartao" placeholder="Número do cartão" required>
+        <input type="text" id="nome_cartao" name="nome_cartao" placeholder="Nome Impresso" required>
+        <input type="text" id="data_validade" name="data_validade" placeholder="MM/AA" required>
+        <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+        <select name="qtd_parcelas" id="parcelas" required>
+            <option value="1x">a vista</option>
+            <option value="2x">2x </option>
+            <option value="3x">3x</option>
+            <option value="4x">4x</option>
+            <option value="5x">5x</option>
+            <option value="6x"></option>
+        </select>
+        <button onclick="validarCampos()">Finalizar compra</button>
+        <div class="resumo_compra">
+            <h2>Resumo</h2>
+            <p>valor dos produtos:</p>
+            <p>Frete:</p>
+            <p>Descontos:</p>
+            <p>Total:</p>
+        </div>
+
+    </div>
+
+    <script>
+        function validarCampos() {
+            var numCartao = document.getElementById('num_cartao');
+            var nomeCartao = document.getElementById('nome_cartao');
+            var dataValidade = document.getElementById('data_validade');
+            var cvv = document.getElementById('cvv');
+            var camposVazios = [];
+
+            if (numCartao.value.trim() === '') {
+                camposVazios.push(numCartao);
+            }
+
+            if (nomeCartao.value.trim() === '') {
+                camposVazios.push(nomeCartao);
+            }
+
+            if (dataValidade.value.trim() === '') {
+                camposVazios.push(dataValidade);
+            }
+
+            if (cvv.value.trim() === '') {
+                camposVazios.push(cvv);
+            }
+
+            if (camposVazios.length > 0) {
+                exibirMensagemErro('Preencha todos os dados', camposVazios);
+            } else {
+                var camposInvalidos = [];
+
+                if (numCartao.value.trim() !== '' && !validarNumeroCartao(numCartao.value)) {
+                    camposInvalidos.push(numCartao);
+                }
+
+                if (nomeCartao.value.trim() !== '' && !validarNomeCartao(nomeCartao.value)) {
+                    camposInvalidos.push(nomeCartao);
+                }
+
+                if (dataValidade.value.trim() !== '' && !validarDataValidade(dataValidade.value)) {
+                    camposInvalidos.push(dataValidade);
+                }
+
+                if (cvv.value.trim() !== '' && !validarCVV(cvv.value)) {
+                    camposInvalidos.push(cvv);
+                }
+
+                if (camposInvalidos.length > 0) {
+                    exibirMensagemErro('Formato inválido. Verifique os campos destacados.', camposInvalidos);
+                } else {
+                    limparMensagemErro();
+                }
+            }
+        }
+
+        function validarNumeroCartao(numero) {
+            return /^\d{16}$/.test(numero);
+        }
+
+        function validarNomeCartao(nome) {
+            return /^[a-zA-Z0-9\s]+$/.test(nome);
+        }
+
+        function validarDataValidade(data) {
+            return /^(0[1-9]|1[0-2])\/\d{2}$/.test(data);
+        }
+
+        function validarCVV(cvv) {
+            return /^\d{3}$/.test(cvv);
+        }
+
+        function exibirMensagemErro(mensagem, campos) {
+            alert(mensagem);
+
+            campos.forEach(function (campo) {
+                campo.classList.add('campo-invalido');
+            });
+        }
+
+        function limparMensagemErro() {
+            var campos = document.querySelectorAll('[required]');
+            campos.forEach(function (campo) {
+                campo.classList.remove('campo-invalido');
+            });
+        }
+    </script>
+
+</body>
+
+</html>

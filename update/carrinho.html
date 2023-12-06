@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Store - Carrinho</title>
+    <link rel="stylesheet" href="carrinho.css">
+</head>
+
+<body>
+
+    <header style="margin-left: 30px;">
+        <h1 style="color: rgb(0, 0, 0);">Nike Store</h1>
+        <img class="imagens" src="img/user.png" alt="" style="margin-right: 10px;">
+        <a href="carrinho.html"> 
+            <img class="imagens" src="img/shopping-bag.png" alt="" style="margin-right: 10px;">
+        </a>
+        <a href="FAQ.html"><img class="imagens" src="img/faq.png" alt="Imagem de suporte" style="margin-right: 10px;"></a>
+    </header>
+
+    <nav style="margin-top: -30px;">
+        <a href="home.html">Ínicio</a> 
+        <a href="Lançamentos.html">Lançamentos</a> 
+        <div class="dropdown">
+            <a href="#" id="categoriasDropdown">Categorias</a>
+            <div class="dropdown-content" id="categoriasDropdownContent">
+            </div>
+        </div>
+    </nav>
+
+   
+    <section>
+        <h2 style="text-align: center;">Carrinho</h2>
+
+        <div class="cart-products" id="cartProducts">
+            <!-- Produtos do carrinho serão adicionados aqui dinamicamente -->
+        </div>
+
+            <!-- Adicione mais produtos aqui conforme necessário -->
+        </div>
+    </section>
+
+    <footer>
+        Todos os direitos reservados
+    </footer>
+
+    <script>
+        function addToCart(productName, productPrice) {
+            var cartProducts = document.getElementById("cartProducts");
+
+            var productId = "product_" + Date.now(); // Cria um ID único para o produto
+            var cartProduct = document.createElement("div");
+            cartProduct.className = "cart-product";
+            cartProduct.id = productId;
+
+            cartProduct.innerHTML = `
+                <img src="img/${productName.toLowerCase().replace(' ', '-')}.png" alt="" style="width: 100%;">
+                <h3 style="text-align: center;">${productName}</h3>
+                <p><b>${productPrice}</b></p>
+                <label for="${productId}Quantity">Quantidade:</label>
+                <select id="${productId}Quantity" name="${productId}Quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button onclick="removeFromCart('${productId}')">Remover do Carrinho</button>
+            `;
+
+            cartProducts.appendChild(cartProduct);
+        }
+
+        function removeFromCart(productId) {
+            var cartProduct = document.getElementById(productId);
+            if (cartProduct) {
+                cartProduct.remove();
+            }
+        }
+
+        // Exemplo de adição de produto ao carrinho
+        document.addEventListener('DOMContentLoaded', function () {
+            addToCart("CAMISA BUTTERFLY", "R$129.99");
+        });
+    </script>
+    <script src="dropdown.js"></script>
+</body>
+
+</html>

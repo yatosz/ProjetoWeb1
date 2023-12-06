@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Store - Rastreamento de Pedido</title>
+    <link rel="stylesheet" href="rastreamento.css">
+</head>
+
+<body>
+
+    <header style="margin-left: 30px;">
+        <h1 style="color: rgb(0, 0, 0);">Nike Store</h1>
+        <div id="campoBuscaContainer">
+            <input type="text" id="campoBusca" style="display:none;">
+        </div>
+        <!-- Adiciona um botão com a imagem de busca -->
+        <img class="imagens" src="img/user.png" alt="" style="margin-right: 10px;">
+        <img class="imagens" src="img/shopping-bag.png" alt="" style="margin-right: 10px;">
+        <a href="FAQ.html"><img class="imagens" src="img/faq.png" alt="Imagem de suporte"
+                style="margin-right: 10px;"></a>
+    </header>
+
+    <nav>
+        <a href="home.html">Ínicio</a>
+        <a href="Lançamentos.html">Lançamentos</a>
+        <div class="dropdown">
+            <a href="#" id="categoriasDropdown">Categorias</a>
+            <div class="dropdown-content" id="categoriasDropdownContent">
+                <!-- As categorias serão adicionadas aqui dinamicamente -->
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <h2 style="text-align: center;">Rastreamento de Pedido</h2>
+
+        <!-- Conteúdo da página de rastreamento de pedido -->
+        <p>Insira o número do seu pedido para rastreamento:</p>
+        <input type="text" id="numeroPedido" placeholder="Número do Pedido">
+        <button onclick="rastrearPedido()">Rastrear</button>
+
+        <div id="resultadoRastreamento">
+            <!-- O resultado do rastreamento será exibido aqui -->
+        </div>
+    </section>
+
+    <footer>
+        Todos os direitos reservados
+    </footer>
+
+    <script>
+        // Função para rastrear o pedido (exemplo)
+        function rastrearPedido() {
+            var numeroPedido = document.getElementById('numeroPedido').value;
+            var resultadoRastreamento = document.getElementById('resultadoRastreamento');
+            
+            // Lógica para rastreamento do pedido (pode ser implementada conforme a necessidade)
+            // Exemplo: resultadoRastreamento.innerHTML = "Seu pedido está a caminho!";
+
+            // Limpar o campo de número do pedido após o rastreamento
+            document.getElementById('numeroPedido').value = "";
+        }
+
+        // Função para carregar categorias dinamicamente
+        function carregarCategorias() {
+            var categorias = ["Acessórios", "Calças", "Blusas", "Shorts", "Vestidos"];
+            var dropdownContent = document.getElementById("categoriasDropdownContent");
+            dropdownContent.innerHTML = "";
+
+            categorias.forEach(function (categoria) {
+                var link = document.createElement("a");
+                link.href = categoria.toLowerCase() + ".html";
+                link.textContent = categoria;
+                link.addEventListener('click', function () {
+                    // Redirecione para a URL desejada
+                    window.location.href = link.href;
+                });
+                dropdownContent.appendChild(link);
+
+                console.log("Link gerado para", categoria);
+            });
+
+            console.log("Função carregarCategorias chamada.");
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Aguarde o carregamento do DOM
+
+            // Adicione um ouvinte de clique ao link de Categorias
+            document.getElementById('categoriasDropdown').addEventListener('mouseover', function () {
+                // Log para verificar se o clique está sendo detectado
+                console.log("Mouse sobre Categorias");
+
+                // Adicione a classe "hover" para simular o evento de mouseover
+                carregarCategorias();
+            });
+        });
+    </script>
+</body>
+
+</html>

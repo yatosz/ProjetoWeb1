@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Store - Contato e Suporte</title>
+    <link rel="stylesheet" href="suporte.css">
+</head>
+
+<body>
+
+    <header style="margin-left: 30px;">
+        <h1 style="color: rgb(0, 0, 0);">Nike Store</h1>
+        <div id="campoBuscaContainer">
+            <input type="text" id="campoBusca" style="display:none;">
+        </div>
+        <img class="imagens" src="img/user.png" alt="" style="margin-right: 10px;">
+        <img class="imagens" src="img/shopping-bag.png" alt="" style="margin-right: 10px;">
+        <a href="FAQ.html"><img class="imagens" src="img/faq.png" alt="Imagem de suporte"
+                style="margin-right: 10px;"></a>
+    </header>
+
+    <nav>
+        <a href="home.html">Ínicio</a>
+        <a href="Lançamentos.html">Lançamentos</a>
+        <div class="dropdown">
+            <a href="#" id="categoriasDropdown">Categorias</a>
+            <div class="dropdown-content" id="categoriasDropdownContent"></div>
+        </div>
+    </nav>
+
+    <section>
+        <h2 style="text-align: center;">Contato e Suporte</h2>
+        <p>Entre em contato conosco para obter suporte ou mais informações sobre nossos produtos.</p>
+
+        <div>
+            <h3>Informações de Contato:</h3>
+            <p>Email: contato@nikestore.com</p>
+            <p>Telefone: (11) 91234-5678</p>
+        </div>
+
+        <div>
+            <h3>Opções de Suporte:</h3>
+            <p>1. Visite nossa <a href="FAQ.html" class="link_faq">Página de Perguntas Frequentes</a> para obter respostas rápidas.</p>
+            <p>2. Envie-nos uma mensagem através do formulário abaixo:</p>
+            <form>
+                <!-- Adicione os campos do formulário conforme necessário -->
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br>
+
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        Todos os direitos reservados
+    </footer>
+
+    <script>
+        function carregarCategorias() {
+            // Código existente para carregar categorias
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Código existente para ouvinte de clique em Categorias
+        });
+    </script>
+</body>
+
+</html>
